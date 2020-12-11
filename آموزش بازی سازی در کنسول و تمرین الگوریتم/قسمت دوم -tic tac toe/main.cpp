@@ -53,7 +53,7 @@ void move(int state[][3],int turn){
 	do{// validate input
 		printf("select available postion:");
 		scanf("%d %d",&pos_x,&pos_y);
-	}while(pos_x<0 || pos_x>3||pos_y<0 || pos_y>3 ||state[pos_x-1][pos_y-1]!=0);
+	}while(pos_x<=0 || pos_x>3||pos_y<=0 || pos_y>3 ||state[pos_x-1][pos_y-1]!=0);
 	state[pos_x-1][pos_y-1]=turn;
 }
 // taghir nobat
@@ -85,8 +85,9 @@ int main() {
 		print_border(state);
 	}
 	int status_win =check_winner(state);
+	printf("*******************\n")
 	if(status_win==0){
-		printf("\nmosavi");
+		printf("mosavi");
 	}else if(status_win==1){
 		printf("nafar aval bord");
 	}else{//status_win == 2
